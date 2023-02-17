@@ -35,7 +35,7 @@
     Shake ya body like a belly dancer";
 
     $parolaCensura = 'girl';
-    $parolaCensura2 = isset($_GET['student'])? $_GET['student'] : '';;
+    $parolaCensura2 = isset($_GET['parola_censura'])? $_GET['parola_censura'] : '';;
     ?>
     <h1>
         Hello Word!! in Php < 3 </h1>
@@ -51,13 +51,13 @@
                     <strong>Lunghezza testo originale:</strong> <br> <?php echo strlen($testoCanzone) ?>
                 </p>
                 <p>
-                    <strong>Parola da censurare:</strong> <br> <?php echo $parolaCensura; ?>
+                    <strong>Parola da censurare:</strong> <br> <?php echo $parolaCensura2; ?>
                 </p>
                 <p>
-                    <strong>Testo canzone censurato:</strong> <br> <?php echo str_replace($parolaCensura, '***', $testoCanzone); ?>
+                    <strong>Testo canzone censurato:</strong> <br> <?php echo str_replace($parolaCensura2, '***', $testoCanzone); ?>
                 </p>
                 <p>
-                    <strong>Lunghezza testo censura: </strong><br> <?php echo $parolaCensura2 ?>
+                    <strong>Lunghezza testo censura: </strong><br> <?php echo strlen(str_replace($parolaCensura2, '***', $testoCanzone)) ?>
                 </p>
 
             </div>
@@ -72,5 +72,6 @@
                     </button>
                 </form>
             </div>
+</body>
 
 </html>
